@@ -6,4 +6,4 @@ jobs:
     name: "Tell that new branch or tag has been created"
     runs-on: windows-latest
     steps:
-    - run: echo "Hello Hello"
+    - run: echo "A new branch or tag has been created"
