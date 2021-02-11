@@ -1,1 +1,14 @@
+name: A workflow to see the usage of environment variables
+on: [push, create]
 
+jobs:
+  checkDay:
+    runs-on: windows-latest
+    env: 
+      DAY_OF_WEEK: Mon
+    steps:
+      - if: env.DAY_OF_WEEK == 'Mon'
+        run: echo "Hello $FIRST_NAME, today is Monday"
+        env:
+          FIRST_NAME: Me
+      
