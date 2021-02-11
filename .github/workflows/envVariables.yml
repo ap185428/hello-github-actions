@@ -3,7 +3,7 @@ on: [push, create]
 
 jobs:
   checkDay:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     env: 
       DAY_OF_WEEK: Mon
     steps:
