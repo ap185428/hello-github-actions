@@ -8,9 +8,9 @@ jobs:
       DAY_OF_WEEK: Mon
     steps:
       - if: env.DAY_OF_WEEK == 'Mon'
-        run: echo "Hello $FIRST_NAME, today is Monday"
+        run: echo "Hello $FIRST_NAME, today is Monday!"
         env:
-          FIRST_NAME: Me
+          FIRST_NAME: github
       
   weekday_job:
     runs-on: ubuntu-latest
