@@ -1,1 +1,13 @@
-
+name: Input and output parameters usage
+on: [push, create]
+jobs:
+  item_purchased:
+     name: input parameters to hello_world
+     runs-on: ubuntu-latest  
+     steps:
+       - name: Step 1
+         uses: actions/hello_world@main
+         with:
+           first_name: FirstName
+           middle_name: MiddleName
+           last_name: LastName
