@@ -1,9 +1,12 @@
-name: A workflow for new branch or tag creation
+name: New Branch, Tag Creation [Events - Create]
 on: create
 
 jobs:
-  greet:
-    name: "Tell that new branch or tag has been created"
-    runs-on: windows-latest
+  notify:
+    name: "Notify new branch or tag has been created in cmd"
+    runs-on: {{matrix.os}} 
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
     steps:
-    - run: echo "A new branch or tag has been created"
+    - run: echo "New branch or tag has been created by name $GITHUB_REF"
