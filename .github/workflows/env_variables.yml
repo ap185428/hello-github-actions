@@ -5,15 +5,19 @@ jobs:
   find_price:
     name: Creating our own environment variables
     runs-on: windows-latest
+    outputs:
+      totalPrice: ${{steps.step1.outputs.test}}*${{steps.step2.outputs.test}}
     env:
       NO_OF_ITEMS: 5
       PRICE_OF_ITEMS: 20
     steps: 
-      - name: Find total amount
+      - id: step1
+        run: echo "::set-output name=test::${env.NO_OF_ITEMS} 
+      - id: step2
+        run: echo "::set-output name=test::${env.PRICE_OF_ITEMS}"
+      - id: step3
         run: echo "No of ITEMS = ${env.NO_OF_ITEMS} and Price of ITEMS = ${env.PRICE_OF_ITEMS}"
-        outputs:
-          totalPrice: ${{NO_OF_ITEMS}}*${{PRICE}}
-              
+
   week_job:
     runs-on: ubuntu-latest
     env:
