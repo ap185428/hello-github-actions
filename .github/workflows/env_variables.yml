@@ -4,7 +4,7 @@ on: [push, create]
 jobs:
   find_price:
     name: Creating our own environment variables
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     outputs:
       totalPrice: ${{steps.step1.outputs.test}}*${{steps.step2.outputs.test}}
     env:
