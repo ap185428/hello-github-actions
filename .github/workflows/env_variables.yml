@@ -16,8 +16,9 @@ jobs:
       - id: step2
         run: echo "::set-output name=test::${env.PRICE_OF_ITEMS}"
       - id: step3
-        run: echo "No of ITEMS = env.NO_OF_ITEMS and Price of ITEMS = ${env.PRICE_OF_ITEMS}"
-
+        run: echo "No of ITEMS = env.NO_OF_ITEMS and Price of ITEMS = ${env.PRICE_OF_ITEMS} env.TEST_VAR"
+        env:
+          TEST_VAR: 5
   week_job:
     runs-on: ubuntu-latest
     env:
