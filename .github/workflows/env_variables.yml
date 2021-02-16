@@ -14,7 +14,7 @@ jobs:
       - id: step1
         run: echo "::set-output name=test::env.NO_OF_ITEMS" 
       - id: step2
-        run: echo "::set-output name=test::${env.PRICE_OF_ITEMS}"
+        run: echo "::set-output name=test::env.TEST_VAR"
       - id: step3
         run: echo "$TEST_VAR"
         env:
