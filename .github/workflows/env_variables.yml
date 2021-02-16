@@ -15,12 +15,18 @@ jobs:
         run: echo "::set-output name=test::TEST_VAR" 
       - id: step2
         run: echo "::set-output name=test::TEST_VAR"
-        env:
-          TEST_VAR: 10
       - id: step3
         run: echo "$TEST_VAR $NO_OF_ITEMS $PRICE_OF_ITEMS"
         env:
           TEST_VAR: 5
+  
+  print_price:
+      name: Print the output totalPrice
+      runs-on: ubuntu-latest
+      needs: find_price
+      steps:
+        - run: echo "needs.find_price.outputs.totalPrice"
+  
   week_job:
     runs-on: ubuntu-latest
     env:
