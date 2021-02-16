@@ -1,10 +1,22 @@
-name: A workflow to see the usage of environment variables
+name: Environment varibales use
 on: [push, create]
 
 jobs:
-  checkDay:
+  find_price:
+    name: Creating our own environment variables
     runs-on: windows-latest
-    env: 
+    env:
+      NO_OF_ITEMS: 5
+      PRICE_OF_ITEMS: 20
+    steps: 
+      - name: Find total amount
+        run: echo "No of ITEMS = ${env.NO_OF_ITEMS} and Price of ITEMS = ${env.PRICE_OF_ITEMS}"
+        outputs:
+          totalPrice: ${{NO_OF_ITEMS}}*${{PRICE}}
+              
+  weekday_job:
+    runs-on: ubuntu-latest
+    env:
       DAY_OF_WEEK: Mon
     steps:
       - name: "Hello world when it's Monday"
