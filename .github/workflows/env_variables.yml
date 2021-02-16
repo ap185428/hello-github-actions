@@ -9,7 +9,7 @@ jobs:
     name: Creating our own environment variables
     runs-on: ubuntu-latest
     outputs:
-      totalPrice: ${{steps.step1.outputs.test}}*${{steps.step2.outputs.test}}
+      totalPrice: 50
     steps: 
       - id: step1
         run: echo "::set-output name=test::TEST_VAR" 
