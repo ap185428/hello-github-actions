@@ -3,20 +3,20 @@ on: [push, create]
 
 jobs:
   find_price:
+    env:
+      NO_OF_ITEMS: 5
+      PRICE_OF_ITEMS: 20
     name: Creating our own environment variables
     runs-on: ubuntu-latest
     outputs:
       totalPrice: ${{steps.step1.outputs.test}}*${{steps.step2.outputs.test}}
-    env:
-      NO_OF_ITEMS: 5
-      PRICE_OF_ITEMS: 20
     steps: 
       - id: step1
-        run: echo "::set-output name=test::NO_OF_ITEMS" 
+        run: echo "::set-output name=test::TEST_VAR" 
       - id: step2
         run: echo "::set-output name=test::TEST_VAR"
       - id: step3
-        run: echo "$TEST_VAR"
+        run: echo "$TEST_VAR $NO_OF_ITEMS $PRICE_OF_ITEMS"
         env:
           TEST_VAR: 5
   week_job:
