@@ -14,7 +14,7 @@ jobs:
         outputs:
           totalPrice: ${{NO_OF_ITEMS}}*${{PRICE}}
               
-  weekday_job:
+  week_job:
     runs-on: ubuntu-latest
     env:
       DAY_OF_WEEK: Mon
