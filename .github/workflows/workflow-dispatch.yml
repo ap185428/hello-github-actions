@@ -1,0 +1,5 @@
+name: Working workflow dispatch event
+jobs:
+  job1: 
+  runs-on: ubuntu-latest
+  
