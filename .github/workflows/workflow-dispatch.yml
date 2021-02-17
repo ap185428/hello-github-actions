@@ -1,5 +1,18 @@
-name: Working workflow dispatch event
+name: Working of workflow dispatch event
+on: 
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'your name'     
+        required: true
+        default: 'Octocat'
+      message:
+        description: 'Please leave a message for yourself'
+
 jobs:
-  job1: 
-  runs-on: ubuntu-latest
-  
+  printInputs:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Hello: ${{ github.event.inputs.name }}"
+        echo "Tags: ${{ github.event.inputs.message }}" 
